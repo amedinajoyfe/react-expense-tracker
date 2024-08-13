@@ -58,24 +58,8 @@ let UsersService = class UsersService {
         }
         const newPassword = await bcrypt.hash(newUser.userpassword, 10);
         const language = defaultCategories_1.defaultCategories[newUser.userlanguage] ? newUser.userlanguage : "EN";
-        let userExists = true;
-        let newid;
-        while (userExists) {
-            let newId = this.generateRandomString(16);
-            const users = await this.getUserById(newId);
-            userExists = users.length > 0;
-        }
-        const userToAdd = new user_entity_1.User(newid, newUser.username, newUser.email, newPassword, defaultCategories_1.defaultCategories[language].buy, defaultCategories_1.defaultCategories[language].earn, language);
+        const userToAdd = new user_entity_1.User(newUser.username, newUser.email, newPassword, defaultCategories_1.defaultCategories[language].buy, defaultCategories_1.defaultCategories[language].earn, language);
         return this.usersRepository.addNewUser(userToAdd);
-    }
-    generateRandomString(length) {
-        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-_~';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            result += charset[randomIndex];
-        }
-        return result;
     }
 };
 exports.UsersService = UsersService;

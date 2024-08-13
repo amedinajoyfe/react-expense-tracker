@@ -27,7 +27,6 @@ export class User {
   lastupdate: Date;
 
   constructor(
-    id: string, 
     username: string,
     email: string,
     userpassword: string,
@@ -35,7 +34,6 @@ export class User {
     earncategories: string,
     userlanguage: string
   ) {
-    this.id = id;
     this.username = username;
     this.email = email;
     this.userpassword = userpassword;

@@ -13,17 +13,17 @@ export class UsersController {
   }
 
   @Get(':id')
-  async getUserById(@Param('id') id:string): Promise<User[]> {
+  async getUserById(@Param('id') id: string): Promise<User[]> {
     return this.usersService.getUserById(id);
   }
 
   @Get('email')
-  async getUserByEmail(@Param('email') email:string){
+  async getUserByEmail(@Param('email') email: string) {
     return this.usersService.getUserByEmail(email);
   }
 
   @Post()
-  async addNewUser(@Body() createUserDto: CreateUserDto){
+  async addNewUser(@Body() createUserDto: CreateUserDto) {
     return await this.usersService.addNewUser(createUserDto);
   }
 }

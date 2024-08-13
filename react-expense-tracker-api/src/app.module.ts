@@ -12,7 +12,7 @@ import { MovementsModule } from './movements/movements.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: '1234',
       database: 'expensetracker',
       autoLoadEntities: true,
       synchronize: false,

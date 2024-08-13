@@ -24,8 +24,14 @@ let MovementsRepository = class MovementsRepository {
     async getMovementsByUserId(userid) {
         return this.repository.find({ where: { userid } });
     }
+    async getMovementById(id) {
+        return this.repository.find({ where: { id } });
+    }
     async getAllMovements() {
         return this.repository.find();
+    }
+    async addNewMovement(newMovement) {
+        return this.repository.save(newMovement);
     }
 };
 exports.MovementsRepository = MovementsRepository;

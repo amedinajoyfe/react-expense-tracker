@@ -12,6 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Movement = void 0;
 const typeorm_1 = require("typeorm");
 let Movement = class Movement {
+    constructor(userid, expense, category, amount) {
+        this.userid = userid;
+        this.expense = expense;
+        this.category = category;
+        this.amount = amount;
+    }
 };
 exports.Movement = Movement;
 __decorate([
@@ -34,7 +40,12 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'double' }),
     __metadata("design:type", Number)
 ], Movement.prototype, "amount", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Date)
+], Movement.prototype, "creationdate", void 0);
 exports.Movement = Movement = __decorate([
-    (0, typeorm_1.Entity)({ name: "movements" })
+    (0, typeorm_1.Entity)({ name: 'movements' }),
+    __metadata("design:paramtypes", [String, Boolean, String, Number])
 ], Movement);
 //# sourceMappingURL=movements.entity.js.map

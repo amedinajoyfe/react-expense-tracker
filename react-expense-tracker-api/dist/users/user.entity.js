@@ -12,8 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 let User = class User {
-    constructor(id, username, email, userpassword, buycategories, earncategories, userlanguage) {
-        this.id = id;
+    constructor(username, email, userpassword, buycategories, earncategories, userlanguage) {
         this.username = username;
         this.email = email;
         this.userpassword = userpassword;
@@ -57,6 +56,6 @@ __decorate([
 ], User.prototype, "lastupdate", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)({ name: 'users' }),
-    __metadata("design:paramtypes", [String, String, String, String, String, String, String])
+    __metadata("design:paramtypes", [String, String, String, String, String, String])
 ], User);
 //# sourceMappingURL=user.entity.js.map

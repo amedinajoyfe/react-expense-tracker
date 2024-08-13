@@ -1,1 +1,0 @@
-{"version":3,"file":"defaultCategories.js","sourceRoot":"","sources":["../src/defaultCategories.ts"],"names":[],"mappings":";;;AAAa,QAAA,iBAAiB,GAAG;IAC7B,IAAI,EAAE;QACF,GAAG,EAAE,yCAAyC;QAC9C,IAAI,EAAE,cAAc;KACvB;IACD,IAAI,EAAE;QACF,GAAG,EAAE,gDAAgD;QACrD,IAAI,EAAE,gBAAgB;KACzB;CACJ,CAAA"}

@@ -8,5 +8,4 @@ export declare class UsersService {
     getUserById(id: string): Promise<User[]>;
     getUserByEmail(email: string): Promise<User[]>;
     addNewUser(newUser: CreateUserDto): Promise<User | null>;
-    generateRandomString(length: number): string;
 }

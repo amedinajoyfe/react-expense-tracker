@@ -23,7 +23,6 @@ export class UsersRepository {
   }
 
   async addNewUser(newUser:User): Promise<User> {
-    this.repository.insert(newUser);
-    return newUser;
+    return this.repository.save(newUser);
   }
 }

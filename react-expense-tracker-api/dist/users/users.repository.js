@@ -31,8 +31,7 @@ let UsersRepository = class UsersRepository {
         return this.repository.find({ where: { email }, take: 1 });
     }
     async addNewUser(newUser) {
-        this.repository.insert(newUser);
-        return newUser;
+        return this.repository.save(newUser);
     }
 };
 exports.UsersRepository = UsersRepository;

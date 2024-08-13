@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body } from '@nestjs/common';
 import { MovementsService } from './movements.service';
+import { CreateMovementDto } from './create.movement.dto';
 
 @Controller('movements')
 export class MovementsController {
@@ -13,5 +14,15 @@ export class MovementsController {
   @Get(":userid")
   getMovementsByUserId(@Param('userid') userid: string) {
     return this.movementsService.getMovementsByUserId(userid);
+  }
+
+  @Get(":id")
+  getMovementById(@Param('id') id: string) {
+    return this.movementsService.getMovementsByUserId(id);
+  }
+
+  @Post()
+  addNewMovement(@Body() newMovement: CreateMovementDto){
+    return this.movementsService.addNewMovement(newMovement);
   }
 }

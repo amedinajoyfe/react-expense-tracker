@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MovementsService = void 0;
 const common_1 = require("@nestjs/common");
 const movements_repository_1 = require("./movements.repository");
+const movements_entity_1 = require("./movements.entity");
 let MovementsService = class MovementsService {
     constructor(movementsRepository) {
         this.movementsRepository = movementsRepository;
@@ -21,6 +22,13 @@ let MovementsService = class MovementsService {
     }
     getAllMovements() {
         return this.movementsRepository.getAllMovements();
+    }
+    getMovementById(id) {
+        return this.movementsRepository.getMovementById(id);
+    }
+    async addNewMovement(newMovement) {
+        let movementToAdd = new movements_entity_1.Movement(newMovement.userid, newMovement.expense, newMovement.category, newMovement.amount);
+        return this.movementsRepository.addNewMovement(movementToAdd);
     }
 };
 exports.MovementsService = MovementsService;
