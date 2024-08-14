@@ -2,28 +2,24 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Movement } from './movements.entity';
-import { CreateMovementDto } from './create.movement.dto';
 
 @Injectable()
-export class MovementsRepository {
-  constructor(
-    @InjectRepository(Movement)
-    private readonly repository: Repository<Movement>,
-  ) {}
+export class MovementsRepository{
+  constructor( @InjectRepository(Movement) private movementsRepository: Repository<Movement>){}
 
-  async getMovementsByUserId(userid: string): Promise<Movement[]> {
-    return this.repository.find({where: {userid}});
+  async getAllMovements(): Promise<Movement[]>{
+    return this.movementsRepository.find();
   }
 
-  async getMovementById(id: string): Promise<Movement[]> {
-    return this.repository.find({where: {id}});
+  async getMovementById(id: string): Promise<Movement[]>{
+    return this.movementsRepository.find({ where: { id } });
   }
 
-  async getAllMovements(): Promise<Movement[]> {
-    return this.repository.find();
+  async getMovementsByUserId(userid: string): Promise<Movement[]>{
+    return this.movementsRepository.find({ where: { userid } });
   }
 
-  async addNewMovement(newMovement: Movement): Promise<Movement> {
-    return this.repository.save(newMovement);
+  async addNewMovement(newMovement: Movement): Promise<Movement>{
+    return this.movementsRepository.save(newMovement);
   }
 }

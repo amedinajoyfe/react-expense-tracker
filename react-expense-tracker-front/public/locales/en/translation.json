@@ -1,4 +1,8 @@
 {
     "welcome": "Welcome",
-    "balanceinfo": "Your balance is"
+    "balanceinfo": "Your balance is",
+    "expenses": "Expenses",
+    "income": "Income",
+    "categories": "Categories",
+    "movements": "Movements"
 }

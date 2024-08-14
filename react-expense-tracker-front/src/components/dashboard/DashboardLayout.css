@@ -1,0 +1,71 @@
+/* src/styles.css */
+
+.empty-space{
+    border: none !important;
+}
+
+.user-info {
+    height: 150px;
+}
+
+.categories {
+    height: 300px;
+    text-align: center;
+}
+
+.chart-tag {
+    height: 80px;
+    text-align: center;
+}
+
+.chart {
+    height: 250px;
+}
+
+.movements-table {
+    height: 250px;
+    text-align: center;
+}
+
+.add-button{
+    position: fixed;
+    bottom: 5%;
+    border: solid black 2px;
+    border-radius: 50%;
+    line-height: 0;
+    width: 50px;
+    height: 50px;
+}
+.add-button:hover{
+    background-color: gray;
+}
+.add-button:active{
+    background-color: white;
+}
+
+.dashboard-layout{
+    margin: 0 5% 0 5%;
+}
+
+.box {
+padding: 20px;
+margin: 10px 0;
+}
+
+.floatingButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media  (max-width: 1200px){
+    .separator{
+        display: none;
+    }
+}

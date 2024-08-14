@@ -1,10 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
+import DashboardLayout from './components/dashboard/DashboardLayout';
 
 function App() {
-  const { t, i18n } = useTranslation();
 
   // const changeLanguage = (lng) => {
   //   i18n.changeLanguage(lng);
@@ -12,8 +10,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>{t('welcome')} Alejandro</h1>
-      <h2>{t('balanceinfo')} 1320€</h2>
+      <DashboardLayout></DashboardLayout>
     </div>
   );
 }

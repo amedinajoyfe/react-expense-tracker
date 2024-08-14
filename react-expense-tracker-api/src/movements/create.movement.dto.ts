@@ -1,20 +1,19 @@
-import { IsString, IsEmail, IsNotEmpty, isNumber, isNotEmpty, IsBoolean, IsDecimal } from 'class-validator';
+import { IsString, IsNotEmpty, IsBoolean, IsNumber } from 'class-validator';
 
 export class CreateMovementDto{
     @IsString()
     @IsNotEmpty()
-    readonly userid:string;
+    readonly userid: string;
 
-    
     @IsBoolean()
     @IsNotEmpty()
-    readonly expense:boolean;
-    
+    readonly expense: boolean;
+
     @IsString()
     @IsNotEmpty()
-    readonly category:string;
-    
-    @IsDecimal()
+    readonly category: string;
+
+    @IsNumber()
     @IsNotEmpty()
-    readonly amount:number;
+    readonly amount: number;
 }
